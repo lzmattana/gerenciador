@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet(urlPatterns="/oi") // caminho de acesso
+@WebServlet(urlPatterns = "/oi") // mapeamento caminho de acesso
 public class OiTeste extends HttpServlet {
-	
+
 	@Override
+	// metodo que recebe obj 
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
 		PrintWriter out = resp.getWriter(); // cria obj
@@ -21,7 +21,7 @@ public class OiTeste extends HttpServlet {
 		out.println("TESTE INICIAL HTTP");
 		out.println("</body>");
 		out.println("</html>");
-		
+
 		System.out.println("OBJ CHAMADO"); // teste console de acesso
 	}
 }
