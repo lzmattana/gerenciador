@@ -43,7 +43,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 //		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
 		
 		// chamando JSP
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 		request.setAttribute("empresa", empresa.getNome()); // seta parametro jsp
 		rd.forward(request, response); // envia jsp
 	}
