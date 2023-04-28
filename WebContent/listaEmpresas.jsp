@@ -13,7 +13,7 @@
 	Lista de Empresas: <br/>	
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			<li>${empresa.nome}</li>	
+			<li>${empresa.nome} ${empresa.dataAbertura}</li>	
 		</c:forEach>	
 	</ul>
 </body>
