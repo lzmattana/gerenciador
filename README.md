@@ -16,7 +16,7 @@ Siga os passos abaixo para instalar e executar o projeto em sua máquina:
 1. Clone este repositório:
 
     ```
-    git clone https://github.com/seu-usuario/gerenciador-empresas.git
+    git clone https://github.com/lzmattana/gerenciador.git
     ```
 
 2. Importe o projeto em sua IDE Java de preferência.
