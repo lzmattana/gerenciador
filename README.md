@@ -25,7 +25,7 @@ Siga os passos abaixo para instalar e executar o projeto em sua máquina:
 
 4. Execute o projeto na IDE ou faça o deploy do WAR gerado na pasta `target` no Tomcat.
 
-5. Acesse a aplicação em seu navegador pelo endereço [http://localhost:8080/gerenciador-empresas](http://localhost:8080/gerenciador-empresas).
+5. Acesse a aplicação em seu navegador pelo endereço [http://localhost:8080/gerenciador](http://localhost:8080/gerenciador).
 
 ## Endpoints
 
