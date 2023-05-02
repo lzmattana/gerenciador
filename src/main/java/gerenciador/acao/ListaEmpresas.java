@@ -19,6 +19,6 @@ public class ListaEmpresas {
 		List<Empresa> lista = banco.getEmpresas(); //recuperando lista de empresas
 		request.setAttribute("empresas", lista);
 		
-		return "forward:/listaEmpresas.jsp"; // retorna uma string por conta do metodo 
+		return "forward:listaEmpresas.jsp"; // retorna uma string por conta do metodo 
 	}
 }
