@@ -1,4 +1,4 @@
-package gerenciador.servlet;
+package gerenciador.acao;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,25 +6,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import gerenciador.modelo.Banco;
 import gerenciador.modelo.Empresa;
 
-//@WebServlet("/alteraEmpresa")
-public class AlteraEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Alterando Empresa.");
-		
+public class NovaEmpresa {
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Cadastrando nova Empresa.");
 		String nomeEmpresa = request.getParameter("nome"); // metodod para receber parametro
 		String paramDataEmpresa = request.getParameter("data"); // metodod para receber parametro
-		String paramId = request.getParameter("id"); // metodod para receber parametro
-		Integer id = Integer.valueOf(paramId);
 		
 		Date dataAbertura = null; // variavel locar para poder setar data
 		try { // try necessario da data
@@ -34,16 +26,23 @@ public class AlteraEmpresaServlet extends HttpServlet {
 			throw new ServletException(e);		
 		}
 		
-		System.out.println(id);
-		
-		//modificando os parametros
-		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaPorId(id);
+		Empresa empresa = new Empresa();
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 		
-		response.sendRedirect("listaEmpresas");
+		Banco banco = new Banco();
+		banco.adiciona(empresa);
 		
+		request.setAttribute("empresa", empresa.getNome()); // seta parametro jsp
+		// fazendo um redirecionamento ClientSide
+		response.sendRedirect("entrada?acao=ListaEmpresas");
+		
+//		PrintWriter out = response.getWriter();
+//		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
+		
+//		// chamando JSP
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		request.setAttribute("empresa", empresa.getNome()); // seta parametro jsp
+//		rd.forward(request, response); // envia jsp
 	}
-
 }

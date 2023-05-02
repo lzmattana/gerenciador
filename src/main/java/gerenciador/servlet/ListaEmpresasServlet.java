@@ -1,7 +1,6 @@
 package gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ import gerenciador.modelo.Empresa;
 /**
  * Servlet implementation class ListaEmpresasServlet
  */
-@WebServlet("/listaEmpresas")
+//@WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

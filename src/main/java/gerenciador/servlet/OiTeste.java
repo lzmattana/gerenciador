@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/oi") // mapeamento caminho de acesso
+//@WebServlet(urlPatterns = "/oi") // mapeamento caminho de acesso
 public class OiTeste extends HttpServlet {
 
 	@Override
