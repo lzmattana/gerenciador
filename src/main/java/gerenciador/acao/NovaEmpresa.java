@@ -13,7 +13,7 @@ import gerenciador.modelo.Banco;
 import gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova Empresa.");
 		String nomeEmpresa = request.getParameter("nome"); // metodod para receber parametro
 		String paramDataEmpresa = request.getParameter("data"); // metodod para receber parametro
@@ -35,7 +35,7 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNome()); // seta parametro jsp
 		// fazendo um redirecionamento ClientSide
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 		
 //		PrintWriter out = response.getWriter();
 //		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
