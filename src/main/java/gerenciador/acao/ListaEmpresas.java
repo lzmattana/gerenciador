@@ -12,13 +12,13 @@ import gerenciador.modelo.Banco;
 import gerenciador.modelo.Empresa;
 
 public class ListaEmpresas {
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("listando empresas");
 		
 		Banco banco = new Banco(); // iniciando obj 
 		List<Empresa> lista = banco.getEmpresas(); //recuperando lista de empresas
 		request.setAttribute("empresas", lista);
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
-		rd.forward(request, response);
+		
+		return "forward:listaEmpresas.jsp"; // retorna uma string por conta do metodo 
 	}
 }
