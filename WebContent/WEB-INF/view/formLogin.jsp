@@ -10,7 +10,7 @@
 <body>
 	<form action="${linkEntradaServlet}" method="post">
 
-		LOGIN: <input type="text" name="Login"/>
+		LOGIN: <input type="text" name="login"/>
 		SENHA: <input type="password" name="senha"/>
 		<input type="hidden" name="acao" value="Login" /> 
 		

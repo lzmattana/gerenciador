@@ -5,10 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Banco {
-
+	
+	// CAMADA DE PERCISTENCIA
+	
 	private static List<Empresa> lista = new ArrayList<>(); // lista para guardar empresas
 	private static Integer chaveSequencial = 1; // simulando cad de id
-	private static List<Usuario> listaUsuarios = new ArrayList<>();
+	private static List<Usuario> listaUsuarios = new ArrayList<>(); // lista para guardar usuarios
 
 	// bloco estatico carregado ao iniciar MV
 	static {
@@ -23,11 +25,11 @@ public class Banco {
 
 		Usuario u1 = new Usuario();
 		u1.setLogin("leo");
-		u1.setSenha("123");
+		u1.setSenha("12345");
 
 		Usuario u2 = new Usuario();
 		u2.setLogin("vivi");
-		u2.setSenha("123");
+		u2.setSenha("12345");
 
 		listaUsuarios.add(u1);
 		listaUsuarios.add(u2);
@@ -60,6 +62,15 @@ public class Banco {
 		for (Empresa empresa : lista) {
 			if (empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for (Usuario usuario : listaUsuarios) {
+			if (usuario.confirma(login, senha)) {
+				return usuario;
 			}
 		}
 		return null;
