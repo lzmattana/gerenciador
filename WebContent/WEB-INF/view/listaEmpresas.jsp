@@ -22,7 +22,7 @@
 	<c:if test="${not empty empresa }">
 		Empresa	${ empresa } cadastrada com sucesso!
 	</c:if>
-	Lista de Empresas: <br/>	
+	LISTA DE EMPRESAS: <br/>	
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">			
 			<li>

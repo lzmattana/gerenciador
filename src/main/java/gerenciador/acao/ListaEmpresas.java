@@ -14,10 +14,13 @@ import gerenciador.modelo.Empresa;
 public class ListaEmpresas implements Acao { 
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession sessao = request.getSession();
-		if(sessao.getAttribute("usuarioLogado") == null) {
-			return "redirect:entrada?acao=LoginForm";
-		}
+//		HttpSession sessao = request.getSession();
+//		if(sessao.getAttribute("usuarioLogado") == null) {
+//			return "redirect:entrada?acao=LoginForm";
+//		}
+//		codigo na unicaentrada
+		
+		
 		
 		System.out.println("listando empresas");
 		
@@ -26,5 +29,7 @@ public class ListaEmpresas implements Acao {
 		request.setAttribute("empresas", lista);
 		
 		return "forward:listaEmpresas.jsp"; // retorna uma string por conta do metodo 
+		
+		
 	}
 }
