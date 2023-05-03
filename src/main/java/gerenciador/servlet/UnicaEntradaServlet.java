@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import gerenciador.acao.Acao;
 
@@ -17,7 +18,19 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String paramAcao = request.getParameter("acao");
+
+		// metodo para liberar sessao e trabalhar com o cookie
+		HttpSession sessao = request.getSession();
+		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
+		//booleano mostrando quais das paginas esta liberado o acesso
+		boolean eUmaAcaoProtegida = !(paramAcao.equals("ListaEmpresas") || paramAcao.equals("LoginForm"));
+
+		if (eUmaAcaoProtegida && usuarioNaoEstaLogado) {
+			response.sendRedirect("entrada?acao=LoginForm");
+			return;
+		}
 
 		String nomeDaClasse = "gerenciador.acao." + paramAcao; // string do nome da classe para encapsulamento
 
