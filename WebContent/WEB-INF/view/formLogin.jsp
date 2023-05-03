@@ -8,6 +8,7 @@
 <title>FORMULARIO CADASTRO</title>
 </head>
 <body>
+
 	<form action="${linkEntradaServlet}" method="post">
 
 		LOGIN: <input type="text" name="login"/>

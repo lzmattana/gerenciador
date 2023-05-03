@@ -23,11 +23,13 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 		// metodo para liberar sessao e trabalhar com o cookie
 		HttpSession sessao = request.getSession();
-		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
+		 boolean usuarioNaoEstaLogado = 
+		            (sessao.getAttribute("usuarioLogado") == null);
 		//booleano mostrando quais das paginas esta liberado o acesso
-		boolean eUmaAcaoProtegida = !(paramAcao.equals("ListaEmpresas") || paramAcao.equals("LoginForm"));
+		boolean ehUmaAcaoProtegida = 
+	            !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
 
-		if (eUmaAcaoProtegida && usuarioNaoEstaLogado) {
+		if (ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
 			response.sendRedirect("entrada?acao=LoginForm");
 			return;
 		}
