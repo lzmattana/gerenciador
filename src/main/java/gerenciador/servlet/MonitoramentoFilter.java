@@ -16,6 +16,9 @@ public class MonitoramentoFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+		
+		System.out.println("MonitoramentoFilter");
+		
 		// t1 de exec
 		long antes = System.currentTimeMillis();
 

@@ -21,18 +21,18 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 		String paramAcao = request.getParameter("acao");
 
-		// metodo para liberar sessao e trabalhar com o cookie
-		HttpSession sessao = request.getSession();
-		 boolean usuarioNaoEstaLogado = 
-		            (sessao.getAttribute("usuarioLogado") == null);
-		//booleano mostrando quais das paginas esta liberado o acesso
-		boolean ehUmaAcaoProtegida = 
-	            !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
-
-		if (ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
-			response.sendRedirect("entrada?acao=LoginForm");
-			return;
-		}
+//		// metodo para liberar sessao e trabalhar com o cookie
+//		HttpSession sessao = request.getSession();
+//		 boolean usuarioNaoEstaLogado = 
+//		            (sessao.getAttribute("usuarioLogado") == null);
+//		//booleano mostrando quais das paginas esta liberado o acesso
+//		boolean ehUmaAcaoProtegida = 
+//	            !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+//
+//		if (ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
+//			response.sendRedirect("entrada?acao=LoginForm");
+//			return;
+//		}
 
 		String nomeDaClasse = "gerenciador.acao." + paramAcao; // string do nome da classe para encapsulamento
 
