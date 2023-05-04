@@ -20,6 +20,12 @@ import gerenciador.acao.Acao;
 public class ControladorFilter extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;
+	
+	@Override
+	public void init() throws ServletException {}
+	
+	@Override
+	public void destroy() {}
 
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
 			throws IOException, ServletException {
