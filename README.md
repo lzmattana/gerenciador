@@ -1,6 +1,6 @@
 # Gerenciador de Empresas Java com Servlet e Tomcat 9.0
 
-Este é um projeto Java para um gerenciador de empresas que utiliza o conceito de CRUD (Create, Read, Update e Delete) e foi desenvolvido com Servlet e Tomcat 9.0.
+Este é um projeto Java para um gerenciador de empresas que utiliza o conceito de CRUD (Create, Read, Update e Delete) e foi desenvolvido com Servlet e Tomcat 9.0. 
 
 ## Pré-requisitos
 
@@ -32,9 +32,10 @@ Siga os passos abaixo para instalar e executar o projeto em sua máquina:
 Abaixo estão os endpoints disponíveis na aplicação:
 
 - `/gerenciador`: bem vindo do projeto.
-- `/gerenciador/listEmpresas`: lista as empresas.
-- `/gerenciador/formNovaEmpresa`: cria uma nova empresa.
-- `/gerenciador/formAlterarEmpresa`: edita uma empresa.
+- http://localhost:8080/gerenciador/entrada?acao=LoginForm : formulario de login.
+- http://localhost:8080/gerenciador/entrada?acao=ListaEmpresas : lista de empresas.
+- http://localhost:8080/gerenciador/entrada?acao=NovaEmpresaForm : formulario de nova empresa.
+- http://localhost:8080/gerenciador/entrada?acao=MostraEmpresa&id= : edita a empresa.
 
 
 ## Tecnologias
@@ -71,6 +72,5 @@ As seguintes tecnologias foram utilizadas neste projeto:
 5. Crie um novo _pull request_.
 
 ## Esquema de aplicação:
-![image](https://user-images.githubusercontent.com/114715875/235264023-3920aae1-177a-4ba2-8936-70a08e4a5ee1.png)
-
+![image](https://user-images.githubusercontent.com/114715875/236308138-67bf0d8c-02f7-484d-b38a-885e824df94b.png)
 
